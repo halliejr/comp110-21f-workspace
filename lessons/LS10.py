@@ -1,4 +1,4 @@
-"""Challenge Question #1"""
+"""Challenge Question #1!"""
 
 choice: int = int(input("enter a number: "))
 
@@ -10,7 +10,7 @@ if choice < 25:
     print("A")
 else: 
     if choice < 50:
-        print ("B")
+        print("B")
     else:
         if choice <= 75:
             print("D")
