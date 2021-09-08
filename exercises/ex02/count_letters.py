@@ -6,7 +6,7 @@ __author__ = "730249177"
 user_string: str = input("What letter do you want me to search for?: ")
 word: str = input("Enter a word: ")
 count: int = 0
-
+i: str = input(print("a"))
 for i in user_string:
     if i == 'a':
         count = count + 1
