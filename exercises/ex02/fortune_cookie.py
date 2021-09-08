@@ -19,9 +19,6 @@ else:
             print("Life is about to be better than it has ever been for you.")
             print("Now, go spread positive vibes!")
         else: 
-            print("Your fortune cookie says...")
-            print("A fresh start will put you on your way.")
-            print("Now, go spread positive vibes!")
             if choice <= 5:
                 print("Your fortune cookie says...")
                 print("Life is what you make it.")
