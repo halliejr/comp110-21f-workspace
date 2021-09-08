@@ -22,11 +22,3 @@ else:
             print("Your fortune cookie says...")
             print("A fresh start will put you on your way.")
             print("Now, go spread positive vibes!")
-            if choice <= 5:
-                print("Your fortune cookie says...")
-                print("Life is what you make it.")
-                print("Now, go spread positive vibes!")
-            else:
-                print("Your fortune cookie says...")
-                print("You will be rewarded for all of your hard work.")
-                print("Now, go spread positive vibes!")
