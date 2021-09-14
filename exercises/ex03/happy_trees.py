@@ -5,7 +5,7 @@ __author__ = "730249177"
 # The string constant for the pine tree emoji
 TREE: str = '\U0001F332'
 
-space1: str = " " + TREE
+space1: str = "" + TREE
 depth: int = int(input("Depth: "))
 
 if depth > 0:
