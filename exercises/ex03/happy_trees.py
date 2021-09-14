@@ -15,4 +15,4 @@ if depth > 0:
         TREE = TREE + space1
         print(TREE)
 else:
-    print(None)
+    print(" ")
