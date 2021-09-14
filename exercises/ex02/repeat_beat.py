@@ -7,7 +7,7 @@ number: int = int(input("How many times do you want me to repeat it?"))
 string: str = " " + user_string
 
 if number > 0:
-    while number > 1:
+    while number > 0:
         number = number - 1
         user_string = user_string + string
     print(user_string)
