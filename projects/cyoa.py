@@ -60,7 +60,7 @@ def color(response1: int) -> int:
             while e > suit:
                 points = points + 5
                 e = e - 1
-            print("Good work " + player + "! Final question. ")
+            print(f"Good work {player}! Final question. ")
             number(1)
     else:
         points = points + 1
