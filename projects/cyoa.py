@@ -28,7 +28,7 @@ def main() -> None:
                 points = points + 5
                 print(number(1))
             else:
-                option3: str = input("Do you wish to end the game " + player + "? 1 = Yes or 2 = No: ")
+                option3: int = int(input("Do you wish to end the game " + player + "? 1 = Yes or 2 = No: "))
                 if option3 == 2:
                     points = points + 5
                     print(color(1))
