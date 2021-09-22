@@ -53,7 +53,7 @@ def color(response1: int) -> int:
     response1 = int(input("Pick a color; 1 = Red, 2 = Black: "))
     if response1 == 1:
         points = points + 5
-        suit: int = int(input("Nice job! Now, guess the suit of the card. 1 = Hearts, 2 = Spades, 3 = Clubs, 4 = Diamonds. "))
+        suit: int = int(input("Nice job " + player + "! Now, guess the suit of the card. 1 = Hearts, 2 = Spades, 3 = Clubs, 4 = Diamonds. "))
         from random import randint
         e = randint(1, 4)
         if suit > 0:
@@ -76,9 +76,10 @@ def number(points: int) -> int:
     if y == 2:
         points = points + 5
         print("Wow " + player + ", you rock! ")
-        print("You have won the game " + player + " !!! Congratulations! Thank you for playing S-CARD to Death. Your total adventure points earned are...")
+        print("You have won the game " + player + " !!! Congratulations! " + CLUB + SPADES + HEART + DIAMOND + " Thank you for playing S-CARD to Death. Your total adventure points earned are...")
     else:
         points = points + 1 
+        print("Sorry! That answer was incorrect. The game has ended and you will be single forever. Your total adventure points earned are...")
     return points
 
 
