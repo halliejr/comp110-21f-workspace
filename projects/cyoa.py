@@ -4,6 +4,7 @@ __author__ = "730249177"
 
 player: str
 points: int = 1
+continue_playing: bool = True
 CLUB: str = '\u2663'
 SPADES: str = '\u2660'
 DIAMOND: str = '\u2666'
@@ -15,26 +16,26 @@ def main() -> None:
     """The program's entrypoint."""
     greet()
     global points 
-    option1: int = int(input("Do you want to guess the color of a card " + player + "? If not, the game will end. 1 = Yes or 2 = No: "))
-    while option1 == 1:
-        question1: int = int(input("Are you sure? 1 = Yes or 2 = No. "))
-        option1 = option1 - 1
-        if question1 == 1:
+    global continue_playing 
+    while continue_playing:
+        option1: int = int(input("Do you want to guess the color of a card " + player + "? 1 = Yes and 2 = No: "))
+        if option1 == 1:
             points = points + 5
-            print(color(1))
+            color()
         else:
             option2: int = int(input(player + ", do you want to guess the number on the card? 1 = Yes or 2 = No: "))
             if option2 == 1:
                 points = points + 5
-                print(number(1))
+                number(points)
             else:
                 option3: int = int(input("Do you wish to end the game " + player + "? 1 = Yes or 2 = No: "))
-                if option3 == 2:
-                    points = points + 5
-                    print(color(1))
-                else:
+                if option3 == 1:
                     points = points + 1
-                print("Sorry! The game has ended game and you will now receiev 10 years of bad luck. Thank you for playing S-CARD to Death! You have earned " + str(points) + " adventure points. " + BLACK_HEART)
+                    continue_playing = False
+                    print("The game has ended game and you will now receieve 10 years of bad luck. Thank you for playing S-CARD to Death! You have earned " + str(points) + " adventure points. " + BLACK_HEART)
+                else:
+                    points = points + 5
+                    color()   
     return None
 
 
@@ -47,41 +48,55 @@ def greet() -> None:
     return None
 
 
-def color(response1: int) -> int:
+def color() -> None:
     """The color of the card is Red."""
     global points
     global player 
+    global continue_playing
     response1 = int(input("Pick a color; 1 = Red, 2 = Black: "))
     if response1 == 1:
         points = points + 5
-        suit: int = int(input("Nice job " + player + "! Now, guess the suit of the card. 1 = Hearts, 2 = Spades, 3 = Clubs, 4 = Diamonds. "))
+        suit: int = int(input("Nice job " + player + "! You have earned 5 points. Now, guess the suit of the card. 1 = Hearts, 2 = Spades, 3 = Clubs, 4 = Diamonds. "))
         from random import randint
         e = randint(1, 4)
         if suit > 0:
             while e > suit:
                 points = points + 5
                 e = e - 1
-            print(f"Good work {player}! Final question. ")
-            number(1)
+            print(f"Good work {player}! You have earned 5 points. Final question. ")
+            number(points)
     else:
         points = points + 1
-        print("Sorry! That answer was incorrect. The game has ended and you will be single forever. Your total adventure points earned are...")
-    return points
+        print("Sorry! That answer was incorrect. The game has ended and you will be single forever. Your total adventure points earned are " + str(points))
+    keep_playing() 
+    return None
 
 
 def number(points: int) -> int:
     """The number on the card is lower than 6."""
-    points = 16
+    points = points
     global player 
+    global continue_playing
     y: int = int(input("Guess if the number is higher or lower than 6: 1 = Higher, 2 = Lower: "))
     if y == 2:
         points = points + 5
-        print("Wow " + player + ", you rock! ")
-        print("You have won the game " + player + " !!! Congratulations! " + CLUB + SPADES + HEART + DIAMOND + " Thank you for playing S-CARD to Death. Your total adventure points earned are...")
+        print("Wow " + player + ", you rock! You have earned 5 points. ")
+        print("You have won the game " + player + " !!! Congratulations! " + CLUB + SPADES + HEART + DIAMOND + " Thank you for playing S-CARD to Death. Your total adventure points earned are " + str(points))
     else:
-        points = points + 1 
-        print("Sorry! That answer was incorrect. The game has ended and you will be single forever. Your total adventure points earned are...")
+        points = points + 1
+        print("Sorry! That answer was incorrect. The game has ended and you will be single forever. Your total adventure points earned are " + str(points))
     return points
+
+
+def keep_playing() -> None:
+    """Do you want to continue playing the game?"""
+    global continue_playing 
+    question1: int = int(input("Do you want to continue playing the game? 1 = Yes and 2 = No: "))
+    if question1 == 1:
+        main()
+    else:
+        continue_playing = False
+        print("Goodbye. ")
 
 
 if __name__ == "__main__":
