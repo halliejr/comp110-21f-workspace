@@ -35,6 +35,7 @@ def main() -> None:
                 else:
                     points = points + 1
                 print("Sorry! The game has ended game and you will now receiev 10 years of bad luck. Thank you for playing S-CARD to Death! You have earned " + str(points) + " adventure points. " + BLACK_HEART)
+    return None
 
 
 def greet() -> None:
