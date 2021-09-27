@@ -8,9 +8,9 @@ __author__ = "123456789"
 
 def main() -> None:
     """Import Numbers for List."""
-    print(all([1, 1, 1], 1))
-    print(is_equal([1, 0, 1], [1, 1, 1]))
-    print(max([100, 99, 101]))
+    print(all([1, 2, 1], 1))
+    print(is_equal([1, 1], [1, 1]))
+    print(max([1, 2, 3]))
     return None 
 
 
@@ -20,37 +20,39 @@ def all(x: list[int], y: int) -> bool:
     i: int = 0
     h: bool = True
     while i < start_len:
-        if x[i] == y:
-            return h
+        if x[i] != y:
+            return False
         i += 1       
     else: 
-        return False
+        return h
 
 
-def is_equal(x: list[int], y: list[int]):
+def is_equal(x: list[int], y: list[int]) -> bool:
     """See if list values are equal."""
-    list_leny: int = len(y)
     i: int = 0
-    h: bool = True
-    while i < list_leny:
-        if x[i] == y:
-            return h
-        i += 1
+    h: bool = False
+    if len(x) == len(y):
+        while i < len(x):
+            if x[i] == y[i]:
+                return True
+            i += 1
     else:
-        return False
+        return h
 
 
 def max(input: list[int]) -> int:
     """Return the maximum number in the list."""
-    i: int = 0
-    j: int = 101
-    if len(input) != 0:
-        while input[i] <= 1:
-            return j
+    i: int = 1
+    j: int = input[0]
+    if len(input) == 0:
+        raise ValueError("max() arg is an empty list") 
     else:
-        raise ValueError("max() arg is an empt list")
-    return j
+        if input[i] != j:
+            while input[i] >= j:
+                return input[i]
+            i += 1  
+        return j
 
-
+    
 if __name__ == "__main__":
     main()
