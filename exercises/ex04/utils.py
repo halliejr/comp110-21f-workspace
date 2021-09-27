@@ -9,7 +9,7 @@ __author__ = "123456789"
 def main() -> None:
     """Import Numbers for List."""
     print(all([1, 1], 1))
-    print(is_equal([1, 2, 3], [4, 5, 6]))
+    print(is_equal([1, 2], [2]))
     print(max([-1, -2, -3, 0]))
     return None 
 
@@ -33,16 +33,15 @@ def is_equal(x: list[int], y: list[int]) -> bool:
     """See if list values are equal."""
     i: int = 0
     h: bool = True
-    if (len(x) and len(y)) == 0:
-        return h
+    if len(x) != len(y):
+        return False 
     else:
-        while len(x) == len(y):
-            while i < len(x):
-                if x[i] != y[i]:
-                    return False
-                else:
-                    i += 1
-        return h
+        while i < len(x):
+            if x[i] != y[i]:
+                return False
+            else:
+                i += 1
+    return h
 
 
 def max(input: list[int]) -> int:
