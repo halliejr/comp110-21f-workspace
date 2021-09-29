@@ -10,7 +10,7 @@ def main() -> None:
     """Import Numbers for List."""
     print(all([1, 1], 1))
     print(is_equal([1, 2], [2]))
-    print(max([-1, -2, -3, 0]))
+    print(max([10, 5, 200, 20]))
     return None 
 
 
@@ -47,17 +47,15 @@ def is_equal(x: list[int], y: list[int]) -> bool:
 def max(input: list[int]) -> int:
     """Return the maximum number in the list."""
     i: int = 0
-    j: int = input[0]
     start_len: int = len(input)
     if len(input) == 0:
         raise ValueError("max() arg is an empty list") 
-    else:
-        if i < start_len:
-            i += 1
-            while input[i] <= j:
-                return j
-            i += 1 
-        return input[i]
+    max: int = input[0]
+    while i < start_len:
+        if input[i] > max:
+            max = input[i]
+        i += 1 
+    return max
 
     
 if __name__ == "__main__":
