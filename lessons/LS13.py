@@ -10,11 +10,11 @@ while len(rolls) == 0 or rolls[len(rolls) - 1] != 1:
 
 print(rolls)
 
-#Remove an item in the list by its index ("pop")
+# Remove an item in the list by its index ("pop")
 rolls.pop(len(rolls) - 1)
 print(rolls)
 
-#Sum the values of our rolls!
+# Sum the values of our rolls!
 i: int = 0
 sum: int = 0 
 while i < len(rolls):
@@ -23,7 +23,7 @@ while i < len(rolls):
 
 print(f"Total score: {sum}")
 
-#List literal syntax 
+# List literal syntax 
 
 # rolls.append(1, 6)
 # rolls.append(1, 6)
